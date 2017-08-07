@@ -1,10 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    {% block css %}
+    {% endblock %}
 </head>
 <body>
+{% block header %}
+{% endblock %}
+<div id = "secondLayer">
+    {% block content %}
+    {% endblock %}
+</div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% block js %}
+{% endblock %}
 </body>
 </html>
