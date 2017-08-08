@@ -1,9 +1,18 @@
 from django.shortcuts import render, HttpResponseRedirect
 from .models import User
-from .serializers import UserSerializer
-from rest_framework import viewsets
+from django.http import HttpResponse
+# from .serializers import UserSerializer
+# from rest_framework import viewsets
+from django.template import loader
 
 # Create your views here.
+
+def index(request):
+    template = loader.get_template('authentication/register.html')
+    context = {
+    }
+    return HttpResponse(template.render(context))
+
 def register(request):
     if request.method == "POST":
         print(request.POST)

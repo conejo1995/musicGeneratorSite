@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authentication',
     'pages',
-    'rest_framework',
+    # 'rest_framework',
 ]
 
 AUTH_USER_MODEL = 'authentication.User'
@@ -61,7 +61,9 @@ ROOT_URLCONF = 'BeatBox.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,6 +130,8 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'pages', 'static'),
+    os.path.join(BASE_DIR, 'authentication', 'static'),
+
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
