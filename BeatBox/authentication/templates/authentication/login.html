@@ -1,4 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-<div>Welcome To my Site!</div>
+<form method="post" action="{% url 'login' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    Username:<br>
+    <input type="text" name="username"><br>
+
+    Password:<br>
+    <input type="password" name="password" id="password"><br>
+
+    <input type="submit" value="Login">
+
+    Already a Member?<a href="{% url 'register' %}">Register!</a>
+</form>
 {% endblock %}

@@ -1,4 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-<div>Welcome To my Site!</div>
+    <form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        Username:<br>
+        <input type="text" name="username"><br>
+
+        Password:<br>
+        <input type="password" name="password" id="password"><br>
+
+        Verify Password:<br>
+        <input type="password" name="verifypassword" id="verifypassword"><br>
+
+        Email:<br>
+        <input type="email" name="email" id="email"><br>
+
+        Verify Email:<br>
+        <input type="email" name="verifyemail" id="verifyemail"><br>
+
+        <input type="submit" value="Register">
+
+        Not a Member?<a href="{% url 'login' %}">Login!</a>
+    </form>
 {% endblock %}

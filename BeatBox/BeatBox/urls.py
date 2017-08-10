@@ -17,8 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
+from pages import views as page_views
 
 urlpatterns = [
+    url(r'^$', page_views.home, name='home'),
     url(r'^pages/', include('pages.urls')),
     url(r'^authentication/', include('authentication.urls')),
     url(r'^admin/', admin.site.urls),
