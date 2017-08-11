@@ -3,6 +3,44 @@ body{
 
 }
 
+header{
+    position: fixed;
+    left: 10%;
+    display: flex;
+    justify-content: flex-start;;
+    align-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: white;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000, 0px 1px 0 #000, 0px -1px 0 #000, -1px 0px 0 #000, 1px 0px 0 #000, 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000, 0px 2px 0 #000, 0px -2px 0 #000, -2px 0px 0 #000, 2px 0px 0 #000, 1px 2px 0 #000, -1px 2px 0 #000, 1px -2px 0 #000, -1px -2px 0 #000, 2px 1px 0 #000, -2px 1px 0 #000, 2px -1px 0 #000, -2px -1px 0 #000;
+    font-family: Arial, sans-serif;
+}
+
+#menu{
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 2.5%;
+    right: 10%;
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.btn{
+
+    text-decoration: none;
+    color: white;
+    background-color: #04ebeb;
+	padding:20px;
+	border-radius: 20px;
+	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3),
+				inset 0px 4px 1px 1px #4fffff, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+
 #secondLayer{
     background-color:#04ebeb;
     border-radius: 20px;
@@ -12,7 +50,8 @@ body{
     justify-content: center;
     align-content: center;
     align-items: center;
-
+    flex-direction: column;
+    color: white;
     width: 80%;
     left: 10%;
     height: 75%;
@@ -37,4 +76,27 @@ form{
     background-color: #1aafb5;
     box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3),
 				inset 0px 4px 1px 1px #4fffff, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+
+.greeting{
+    position: absolute;
+    top: 12.5%;
+    left:10%;
+    width: 200px;
+    height: 25px;
+    display: flex;
+    justify-content:flex-start;
+    font-size:xx-large;
+    color: white;
+}
+
+.btn2{
+    text-decoration: none;
+    color: white;
+    background-color: #04b8eb;
+	padding:20px;
+	border-radius: 20px;
+	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3),
+				inset 0px 4px 1px 1px #4fc5ff, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+	font-size:xx-large;
 }

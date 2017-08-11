@@ -1,1 +1,7 @@
 {% extends "base.html" %}
+{% block content %}
+<div class="greeting">{{request.user.username}}'s New Tune:</div>
+<div>Upload a midi sample:  <input type="file"></div><br>
+
+<a href="{% url 'create_beat' %}" class="btn2">Generate Beat</a><br>
+{% endblock %}

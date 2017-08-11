@@ -20,7 +20,7 @@ from django.conf import settings
 from pages import views as page_views
 
 urlpatterns = [
-    url(r'^$', page_views.home, name='home'),
+    url(r'^$', page_views.home, name='main'),
     url(r'^pages/', include('pages.urls')),
     url(r'^authentication/', include('authentication.urls')),
     url(r'^admin/', admin.site.urls),

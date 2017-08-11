@@ -1,1 +1,5 @@
 {% extends "base.html" %}
+{% block content %}
+<div class="greeting">Hello {{request.user.username}}</div>
+<a href="{% url 'create_beat' %}" class="btn2">Create Beat</a>
+{% endblock %}
