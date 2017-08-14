@@ -12,14 +12,7 @@ import mimetypes
 
 @login_required
 def home(request):
-    songs = Song.objects.all()
-    template = loader.get_template('pages/home.html')
-    if request.method == "POST":
-        print(request.POST)
-    context = {
-        'songs': songs,
-    }
-    return HttpResponse(template.render(context, request))
+    return render(request, 'pages/home.html', {})
 
 def docs(request):
     return render(request, 'pages/docs.html', {})
@@ -43,6 +36,7 @@ def create_beat(request):
         song.name = request.POST.get('songName', 'sample')
         song.tune_path = samp1_path
         song.user = request.user
+        song.save()
 
         wrapper = FileWrapper(open(samp1_path, "rb"))
         type = mimetypes.guess_type(samp1_path)[0]

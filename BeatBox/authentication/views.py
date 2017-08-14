@@ -30,7 +30,7 @@ def kenny_loggins(request):
         if user is not None:
             login(request, user)
             # Redirect to a success page.
-            return HttpResponseRedirect('pages/home.html')
+            return render(request, 'pages/home.html', {})
 
         else:
             # Return an 'invalid login' error message.
