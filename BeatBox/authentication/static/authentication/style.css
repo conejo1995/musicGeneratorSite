@@ -1,4 +1,4 @@
-body{
+ body{
     background-color: #bfffff;
 
 }
@@ -61,7 +61,7 @@ header{
 
 }
 
-form{
+.form1{
     position: relative;
     color: white;
     border-radius: 20px;

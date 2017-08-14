@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="greeting">{{request.user.username}}'s New Tune:</div>
-<div>Upload a midi sample:  <input type="file"></div><br>
-
-<a href="{% url 'create_beat' %}" class="btn2">Generate Beat</a><br>
+<form method="post" action="{% url 'create_beat' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>Upload a midi sample:  <input type="file" name="sample1" /></div><br>
+    <div>Upload a second midi sample:  <input type="file" name="sample2" /></div><br>
+    New Tune Name: <input type="text" name="songName"><br>
+    <input type="submit" value="Generate Tune">
+    <!--<br><br><a href="{% url 'create_beat' %}" class="btn2">Generate Tune</a><br>-->
+    <!--Tune Generation May Take Several Minutes-->
+</form>
 {% endblock %}

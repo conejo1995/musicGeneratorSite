@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
 from pages import views as page_views
+from django.views.static import serve
 
 urlpatterns = [
     url(r'^$', page_views.home, name='main'),
@@ -25,3 +26,11 @@ urlpatterns = [
     url(r'^authentication/', include('authentication.urls')),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    ]

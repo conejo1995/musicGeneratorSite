@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<form method="post" action="{% url 'login' %}" enctype="multipart/form-data">
+<form class="form1" method="post" action="{% url 'login' %}" enctype="multipart/form-data">
     {% csrf_token %}
 
     Username:<br>

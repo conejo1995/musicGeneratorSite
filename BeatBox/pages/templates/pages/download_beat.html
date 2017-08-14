@@ -1,4 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="greeting">{{request.user.username}}'s Tunes:</div>
+{% for song in songs %}
+    {% if song.user == request.user %}
+        <a href="{% url '{}' %}".format(song.tune_path)>{{ song.name }}</a><br>
+    {% endif %}
 
+{% endfor %}
 {% endblock %}
